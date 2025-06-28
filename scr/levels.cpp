@@ -18,7 +18,8 @@ void level_01(){
 
         while (plataforma <= 5 && exito) {
             cout << "Elige una opcion (1, 2, 3, 4 o 5): "<<endl;
-            cout << "Plataforma " << plataforma << endl;
+            cout << "==================================" << endl;
+            cout << "Plataforma " << plataforma <<": ";
             cin >> decision;
 
             if (decision == caminoCorrecto[plataforma - 1]) {
