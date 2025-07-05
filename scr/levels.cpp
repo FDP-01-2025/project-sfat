@@ -1,37 +1,38 @@
 #include <iostream>
-#include "header.h"
+#include <string>
+#include "levels.h"
 using namespace std;
 
 void level_01(){
     int decision;
-    int plataforma;
-    bool exito;
+    int plataform;
+    bool success;
 
-    int caminoCorrecto[5] = {2, 5, 3, 1, 4};
+    int right_Path[5] = {2, 5, 3, 1, 4};
 
-    cout << "== MINIJUEGO #1: Cruza el las 5 plataformas ==" << endl;
-    cout << "Debes elegir la opcion correcta en cada plataforma para avanzar." << endl;
+    cout << "== MINIJUEGO #1: Cruza el puente ==" << endl;
+    cout << "Debes adivinar la combinacion correcta para cruzar, un paso en falso y caeras al vacio." << endl;
 
     do {
-        plataforma = 1;
-        exito = true;
+        plataform = 1;
+        success = true;
 
-        while (plataforma <= 5 && exito) {
+        while (plataform <= 5 && success) {
             cout << "Elige una opcion (1, 2, 3, 4 o 5): "<<endl;
             cout << "==================================" << endl;
-            cout << "Plataforma " << plataforma <<": ";
+            cout << "Plataforma " << plataform <<": ";
             cin >> decision;
 
-            if (decision == caminoCorrecto[plataforma - 1]) {
+            if (decision == right_Path[plataform - 1]) {
                 cout << "Correcto! Avanzas a la siguiente plataforma." << endl;
-                plataforma++;
+                plataform++;
             } else {
                 cout << "Incorrecto! Has caido." << endl;
-                exito = false;
+                success = false;
             }
         }
 
-    } while (!exito);
+    } while (!success);
 
-    cout << "Felicidades! Has cruzado todas las plataformas." << endl;
+    cout << "Felicidades! Has cruzado el puente sano y salvo." << endl;
 }
