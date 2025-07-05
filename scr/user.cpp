@@ -6,11 +6,33 @@
 using namespace std;
 
 void SignUp() {
-    string userName, password;
+    string userName, password, uN, p;
+    bool exists = false;
 
-    cout << "=== Registro de Usuario ===" << endl;
+    cout << "\n==============================" << endl;
+    cout << "      REGISTRO DE USUARIO     " << endl;
+    cout << "==============================" << endl;
     cout << "Ingrese nombre de usuario: ";
     cin >> userName;
+
+    // Check if there is a user with an existing UserName
+    ifstream checkFile("usuarios.txt");
+    if (checkFile.is_open()) {
+        while (checkFile >> uN >> p) {
+            if (uN == userName) {
+                exists = true;
+                break;
+            }
+        }
+        checkFile.close();
+    }
+
+    if (exists) {
+        cout << "\nEl nombre de usuario ya existe" << endl;
+        cout << "Por favor use otro diferente" << endl;
+        return;
+    }
+
     cout << "Ingrese contraseña: ";
     cin >> password;
 
@@ -18,16 +40,18 @@ void SignUp() {
     if (archive.is_open()) {
         archive << userName << " " << password << endl;
         archive.close();
-        cout << "Usuario registrado con éxito.\n";
+        cout << "\nUsuario registrado con exito" << endl;
     } else {
-        cout << "Error al abrir el archivo.\n";
+        cout << "\nError al abrir el archivo" << endl;
     }
 }
 
 bool logIn() {
     string userName, password, uN, p;
 
-    cout << "=== Inicio de Sesión ===" << endl;
+    cout << "\n==============================" << endl;
+    cout << "        INICIO DE SESION      " << endl;
+    cout << "==============================" << endl;
     cout << "Usuario: ";
     cin >> userName;
     cout << "Contraseña: ";
@@ -37,16 +61,17 @@ bool logIn() {
     if (archive.is_open()) {
         while (archive >> uN >> p) {
             if (uN == userName && p == password) {
-                cout << "Inicio de sesión exitoso. ¡Bienvenido " << uN << "!\n";
+                cout << "\nInicio de sesion exitoso" << endl;
+                cout << "Bienvenido " << uN << endl;
                 archive.close();
                 return true;
             }
         }
 
         archive.close();
-        cout << "Usuario o contraseña incorrectos.\n";
+        cout << "\nUsuario o contraseña incorrectos" << endl;
     } else {
-        cout << "Error al abrir el archivo.\n";
+        cout << "\nError al abrir el archivo" << endl;
     }
 
     return false;
