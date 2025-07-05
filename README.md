@@ -5,7 +5,7 @@
 ESCAPE FROM THE TEMPLE es un juego 
 ## Equipo
 
-- **Nombre del equipo:** [Nombre del equipo]
+- **Nombre del equipo:** [Super Smash Bugs]
 
 ### Integrantes del equipo
 
