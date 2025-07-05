@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "scr/levels.h"
+#include "scr/gameplay.h"
 #include "scr/user.h"
 #include "scr/menu.h"
 using namespace std;
@@ -10,11 +10,15 @@ int main() {
     bool logged_In = false;
 
     do {
-        cout << "\n=== Menú de Usuario ===\n";
-        cout << "1. Registrarse\n";
-        cout << "2. Iniciar Sesión\n";
-        cout << "3. Salir\n";
-        cout << "Seleccione una opción: ";
+
+        cout << endl;
+        cout << "==============================" << endl;
+        cout << "        MENU DE USUARIO       " << endl;
+        cout << "==============================" << endl;
+        cout << "1. Registrarse" << endl;
+        cout << "2. Iniciar Sesion" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Seleccione una opcion: ";
         cin >> option;
 
         switch (option) {
@@ -26,12 +30,12 @@ int main() {
                 if (logged_In) mainMenu();
                 break;
             case 3:
-                cout << "Saliendo...\n";
+                cout << "Saliendo..." << endl;
                 break;
             default:
-                cout << "Opción inválida.\n";
+                cout << "Opcion invalida" << endl;
         }
-        
+
     } while (option != 3);
 
     return 0;
