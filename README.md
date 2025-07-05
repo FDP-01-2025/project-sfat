@@ -9,8 +9,8 @@ ESCAPE FROM THE TEMPLE es un juego
 
 ### Integrantes del equipo
 
-1. **Nombre completo:** [Nombre del estudiante 1]  
-   **Carnet:** [Carnet del estudiante 1]
+1. **Nombre completo:** [Emerson Mauricio Surio Méndez]  
+   **Carnet:** [00247025]
 
 2. **Nombre completo:** [Nombre del estudiante 2]  
    **Carnet:** [Carnet del estudiante 2]
