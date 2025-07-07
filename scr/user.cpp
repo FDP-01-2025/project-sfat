@@ -15,7 +15,6 @@ void SignUp() {
     cout << "Ingrese nombre de usuario: ";
     cin >> userName;
 
-    // Check if there is a user with an existing UserName
     ifstream checkFile("usuarios.txt");
     if (checkFile.is_open()) {
         while (checkFile >> uN >> p) {
