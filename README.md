@@ -8,6 +8,10 @@ El jugador enfrentará pruebas consecutivamente, cada una de ellas tendrá una m
 
 El objetivo del jugador es completar los cuatro retos que se encuentran instalados en el templo y escapar.
 
+Desafío 1: El puente.
+
+El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuencia correcta.
+
 ## Equipo
 
 - **Nombre del equipo:** [Super Smash Bugs]
