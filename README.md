@@ -29,4 +29,4 @@ El objetivo del jugador es completar los cuatro retos que se encuentran instalad
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone [https://github.com/FDP-01-2025/project-sfat.git]
+   https://github.com/FDP-01-2025/project-sfat.git
