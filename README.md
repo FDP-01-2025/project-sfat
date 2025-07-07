@@ -12,8 +12,8 @@ ESCAPE FROM THE TEMPLE es un juego
 1. **Nombre completo:** [Emerson Mauricio Surio Méndez]  
    **Carnet:** [00247025]
 
-2. **Nombre completo:** [Nombre del estudiante 2]  
-   **Carnet:** [Carnet del estudiante 2]
+2. **Nombre completo:** [José Francisco Rodríguez Hernández]  
+   **Carnet:** [00047824]
 
 3. **Nombre completo:** [Nombre del estudiante 3]  
    **Carnet:** [Carnet del estudiante 3]
