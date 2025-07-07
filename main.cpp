@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include <fstream>
 #include "scr/gameplay.h"
 #include "scr/user.h"
@@ -19,7 +20,12 @@ int main() {
         cout << "2. Iniciar Sesion" << endl;
         cout << "3. Salir" << endl;
         cout << "Seleccione una opcion: ";
-        cin >> option;
+
+        while (!(cin >> option)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrada invalida. Por favor, ingrese un numero: ";
+        }
 
         switch (option) {
             case 1:
