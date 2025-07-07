@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "menu.h"
 #include "gameplay.h"
 #include "levels.h"
@@ -17,7 +18,12 @@ void mainMenu() {
         cout << "  2.  Volver al Menu de Usuario" << endl;
         cout << "------------------------------------------" << endl;
         cout << "Seleccione una opcion: ";
-        cin >> option;
+
+        while (!(cin >> option)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrada invalida. Por favor, ingrese un numero: ";
+        }
 
         switch (option)
         {
@@ -27,11 +33,11 @@ void mainMenu() {
             break;
 
         case 2:
-            cout << "\n Regresando al Menú de Usuario...\n" << endl;
+            cout << "\n Regresando al Menu de Usuario...\n" << endl;
             break;
         
         default:
-            cout << "\n Opción inválida. Intente de nuevo.\n" << endl;
+            cout << "\n Opción invalida. Intente de nuevo.\n" << endl;
             break;
         }
     } while (option != 2);
