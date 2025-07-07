@@ -2,11 +2,12 @@
 #include <vector>
 #include <cctype>
 #include <string>
-#include <cstdlib>   // Para rand() y srand()
-#include <ctime>     // Para time()
+#include <cstdlib>
+#include <ctime>
 #include <chrono>
 #include "levels.h"
 #include "gameplay.h"
+#include <conio.h>
 using namespace std;
 
 void gameTitle(){
@@ -22,15 +23,14 @@ void nextLevel_Message(){
 }
 
 void level_01(){
-    int decision;
-    int plataform;
-    bool success;
-    int right_Path[5];
+    int userChoice;
+    int currentPlatform;
+    bool isSuccess;
+    int correctPath[5];
 
-    // Generate random paths
     srand(time(0));
     for (int i = 0; i < 5; i++) {
-        right_Path[i] = rand() % 5 + 1; // Numbers between 1 and 5
+        correctPath[i] = rand() % 5 + 1;
     }
 
     cout << endl;
@@ -42,39 +42,50 @@ void level_01(){
     cout << "-----------------------------------------------" << endl;
 
     do {
-        plataform = 1;
-        success = true;
+        currentPlatform = 1;
+        isSuccess = true;
 
-        while (plataform <= 5 && success) {
+        while (currentPlatform <= 5 && isSuccess) {
             cout << endl;
             cout << "-----------------------------------------------" << endl;
-            cout << "Plataforma " << plataform << " de 5." << endl;
+            cout << "Plataforma " << currentPlatform << " de 5." << endl;
             cout << "Opciones disponibles: 1, 2, 3, 4, 5." << endl;
             cout << "Elige una opcion: ";
-            cin >> decision;
 
-            if (decision == right_Path[plataform - 1]) {
+            while (!(cin >> userChoice)) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Entrada invalida. Por favor, ingresa un numero entre 1 y 5: ";
+            }
+
+            if (userChoice == correctPath[currentPlatform - 1]) {
                 cout << endl;
                 cout << "**********************************************" << endl;
-                cout << "Correcto. Cruzaste el puente sano y salvo." << endl;
+                cout << "Correcto. Avanzas a la siguiente plataforma." << endl;
                 cout << "**********************************************" << endl;
-                plataform++;
+                currentPlatform++;
             } else {
                 cout << endl;
                 cout << "**********************************************" << endl;
                 cout << "Incorrecto. Has caido al vacio." << endl;
                 cout << "**********************************************" << endl;
-                success = false;
+                isSuccess = false;
             }
         }
 
-    } while (!success);
+        if (currentPlatform > 5 && isSuccess) {
+            cout << endl;
+            cout << "**********************************************" << endl;
+            cout << "Felicidades; has cruzado el sano y salvo." << endl;
+            cout << "**********************************************" << endl;
+        }
+
+    } while (!isSuccess);
 
 }
 
 void level_02() {
-    // Mapa del laberinto (8x8)
-    vector<vector<char>> laberinto = {
+    vector<vector<char>> maze = {
         {'#','#','#','#','#','#','#','#'},
         {'#','@',' ',' ','#',' ',' ','#'},
         {'#',' ','#',' ','#',' ','#','#'},
@@ -85,42 +96,42 @@ void level_02() {
         {'#','#','#','#','#','#','#','#'}
     };
 
-    int jugadorX = 1, jugadorY = 1;
+    int playerX = 1, playerY = 1;
 
-    auto mostrarLaberinto = [&](const vector<vector<char>>& lab) {
-        for (const auto& fila : lab) {
-            for (char celda : fila)
-                cout << celda << ' ';
+    auto showMaze = [&](const vector<vector<char>>& m) {
+        for (const auto& row : m) {
+            for (char cell : row)
+                cout << cell << ' ';
             cout << '\n';
         }
     };
 
-    auto moverJugador = [&](char direccion) -> bool {
-        int nuevaX = jugadorX, nuevaY = jugadorY;
+    auto movePlayer = [&](char direction) -> bool {
+        int nextX = playerX, nextY = playerY;
 
-        switch (direccion) {
-            case 'w': nuevaX--; break;
-            case 's': nuevaX++; break;
-            case 'a': nuevaY--; break;
-            case 'd': nuevaY++; break;
+        switch (direction) {
+            case 'w': nextX--; break;
+            case 's': nextX++; break;
+            case 'a': nextY--; break;
+            case 'd': nextY++; break;
             default:
                 cout << "Movimiento invalido. Usa W, A, S o D." << endl;
                 return false;
         }
 
-        if (nuevaX < 0 || nuevaX >= laberinto.size() || nuevaY < 0 || nuevaY >= laberinto[0].size()) {
+        if (nextX < 0 || nextX >= maze.size() || nextY < 0 || nextY >= maze[0].size()) {
             cout << "No puedes salir del laberinto. Elige otra direccion." << endl;
             return false;
         }
 
-        char destino = laberinto[nuevaX][nuevaY];
+        char destination = maze[nextX][nextY];
 
-        if (destino == '#') {
+        if (destination == '#') {
             cout << "Una pared bloquea el camino. Intenta otra direccion." << endl;
             return false;
         }
 
-        if (destino == 'S') {
+        if (destination == 'S') {
             cout << endl;
             cout << "**********************************************" << endl;
             cout << "Felicidades; has escapado del laberinto con vida." << endl;
@@ -128,32 +139,32 @@ void level_02() {
             return true;
         }
 
-        laberinto[jugadorX][jugadorY] = ' ';
-        jugadorX = nuevaX;
-        jugadorY = nuevaY;
-        laberinto[jugadorX][jugadorY] = '@';
+        maze[playerX][playerY] = ' ';
+        playerX = nextX;
+        playerY = nextY;
+        maze[playerX][playerY] = '@';
 
         return false;
     };
 
     using namespace std::chrono;
-    bool escapaste = false;
+    bool escaped = false;
     do {
-        auto inicio = steady_clock::now();
+        auto start = steady_clock::now();
 
-    cout << "==============================================" << endl;
-    cout << "           Nivel 2: Escape del laberinto." << endl;
-    cout << "==============================================" << endl;
-    cout << "Controla al explorador usando las teclas." << endl;
-    cout << "W: arriba; A: izquierda; S: abajo; D: derecha." << endl;
-    cout << "Tu objetivo es llegar a la salida marcada con S." << endl;
-    cout << "Tienes 20 segundos para escapar del laberinto." << endl;
+        cout << "==============================================" << endl;
+        cout << "           Nivel 2: Escape del laberinto." << endl;
+        cout << "==============================================" << endl;
+        cout << "Controla al explorador usando las teclas." << endl;
+        cout << "W: arriba; A: izquierda; S: abajo; D: derecha." << endl;
+        cout << "Tu objetivo es llegar a la salida marcada con S." << endl;
+        cout << "Tienes 20 segundos para escapar del laberinto." << endl;
 
-        escapaste = false;
-        while (!escapaste) {
-            auto ahora = steady_clock::now();
-            int segundos = duration_cast<seconds>(ahora - inicio).count();
-            if (segundos >= 20) {
+        escaped = false;
+        while (!escaped) {
+            auto now = steady_clock::now();
+            int seconds = std::chrono::duration_cast<std::chrono::seconds>(now - start).count();
+            if (seconds >= 20) {
                 cout << endl;
                 cout << "----------------------------------------------" << endl;
                 cout << "Tiempo agotado. Debes intentarlo de nuevo." << endl;
@@ -162,20 +173,79 @@ void level_02() {
             }
             cout << endl;
             cout << "----------------- Mapa del laberinto -----------------" << endl;
-            mostrarLaberinto(laberinto);
+            showMaze(maze);
             cout << "------------------------------------------------------" << endl;
-            cout << "Tiempo transcurrido: " << segundos << " de 20 segundos." << endl;
+            cout << "Tiempo transcurrido: " << seconds << " de 20 segundos." << endl;
             cout << "Ingresa tu movimiento (W, A, S o D): ";
-            char tecla;
-            cin >> tecla;
+            char key;
+            cin >> key;
 
-            escapaste = moverJugador(tolower(tecla));
+            escaped = movePlayer(tolower(key));
         }
-        if (!escapaste) {
+        if (!escaped) {
             cout << endl;
             cout << "Reiniciando el laberinto. Intenta nuevamente." << endl;
             cout << "----------------------------------------------" << endl;
         }
-    } while (!escapaste);
+    } while (!escaped);
 }
 
+void level_03() {
+    using namespace std::chrono;
+    srand(static_cast<unsigned int>(time(0)));
+    const int totalPresses = 50;
+    const int timeLimit = 15;
+
+    bool completed = false;
+
+    do {
+        int counter = 0;
+
+        char targetKey = 'a' + (rand() % 26);
+
+        cout << endl;
+        cout << "==============================================" << endl;
+        cout << "           Nivel 3: Gira la palanca          " << endl;
+        cout << "==============================================" << endl;
+        cout << "Presiona la tecla '" << targetKey << "' " << totalPresses << " veces lo mas rapido posible." << endl;
+        cout << "Tienes " << timeLimit << " segundos para completar el reto." << endl;
+        cout << "Empieza a presionar." << endl;
+
+        auto start = steady_clock::now();
+
+        while (counter < totalPresses) {
+            auto now = steady_clock::now();
+            int elapsed = duration_cast<seconds>(now - start).count();
+            if (elapsed >= timeLimit) {
+                break;
+            }
+            if (_kbhit()) {
+                char key = _getch();
+                if (key == targetKey) {
+                    counter++;
+                    cout << "Progreso: " << counter << "/" << totalPresses << "\r";
+                    cout.flush();
+                } else {
+                    cout << "Tecla incorrecta: '" << key << "'." << endl;
+                }
+            }
+        }
+
+        auto end = steady_clock::now();
+        auto duration = duration_cast<seconds>(end - start).count();
+
+        if (counter >= totalPresses && duration <= timeLimit) {
+            cout << endl;
+            cout << "**********************************************" << endl;
+            cout << "Felicidades; completaste la fase en " << duration << " segundos." << endl;
+            cout << "**********************************************" << endl;
+            completed = true;
+        } else {
+            cout << endl;
+            cout << "**********************************************" << endl;
+            cout << "No lograste completar el reto en " << timeLimit << " segundos. Intenta de nuevo." << endl;
+            cout << "**********************************************" << endl;
+        }
+
+    } while (!completed);
+}
