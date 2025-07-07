@@ -5,10 +5,11 @@ using namespace std;
 
 void gameplay(){
 
+    system("cls");
     level_01();
-    nextLevel_Message();
     level_02();
-    nextLevel_Message();
     level_03();
+    level_04();
+    level_05();
     
 }
