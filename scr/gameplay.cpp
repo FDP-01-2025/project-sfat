@@ -7,4 +7,8 @@ void gameplay(){
 
     level_01();
     nextLevel_Message();
+    level_02();
+    nextLevel_Message();
+    level_03();
+    
 }
