@@ -6,6 +6,4 @@ void gameTitle();
 void gameplay();
 void nextLevel_Message();
 
-void gameOver_Message();
-
 #endif
