@@ -24,13 +24,16 @@ El Guardian del templo es la ultima prueba del templo, solo los elegidos seran c
 
 
 
-## Apliacion de los temas vistos durante el ciclo
+## Aplicaion de los temas vistos durante el ciclo
 
 
 
 
 
 
+## Mockup del juego
+Menú Principal
+!IMG/mainMenuIMAGE.jpg
 
 ## Equipo
 
