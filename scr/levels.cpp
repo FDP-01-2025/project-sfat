@@ -214,7 +214,7 @@ void level_03() {
     cout << "==============================================" << endl;
     cout << "        Level 3: Hall of Wisdom." << endl;
     cout << "==============================================" << endl;
-    cout << "After escaping the dark labyrinth, you reach a secret room in the temple.\n";
+    cout << "After escaping the dark maze, you reach a secret room in the temple.\n";
     cout << "In the center is an altar with ancient riddles carved in stone...\n";
     cout << "Only by solving its riddles will you be able to continue your journey.\n";
     cin.ignore();
