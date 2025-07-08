@@ -33,6 +33,7 @@ El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuen
    https://github.com/FDP-01-2025/project-sfat.git
 
 2. Open Visual Studio and open the folder with the name "project-sfat-main"
+   
 3. Once you are inside the folder, open a new terminal and type this to compile and run the game:
    ```bash
    .\EscapeFT_Temple.exe
