@@ -56,7 +56,7 @@ El Guardian del templo es la ultima prueba del templo, solo los elegidos seran c
 
 1. Clona este repositorio en tu máquina local:
    ```bash
-   git clone [https://github.com/FDP-01-2025/project-sfat.git]
+   git clone https://github.com/FDP-01-2025/project-sfat.git
 
 2. Open Visual Studio and open the folder with the name "project-sfat-main"
    
