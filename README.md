@@ -36,5 +36,4 @@ El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuen
 3. Once you are inside the folder, open a new terminal and type this to compile and run the game:
    ```bash
    .\EscapeFT_Temple.exe
-   
 
