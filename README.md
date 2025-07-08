@@ -45,10 +45,10 @@ El Guardian del templo es la ultima prueba del templo, solo los elegidos seran c
    **Carnet:** [00047824]
 
 3. **Nombre completo:** [Gerson Alejandro Vindel Martínez]  
-   **Carnet:** [00247025]
+   **Carnet:** [00253425]
 
 4. **Nombre completo:** [Mateo Rogel Guzmán]  
-   **Carnet:** [00047824]
+   **Carnet:** [00246225]
    
    
 
