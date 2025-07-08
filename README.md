@@ -37,7 +37,9 @@ Menú Principal
 ![Image Alt](https://github.com/FDP-01-2025/project-sfat/blob/b1ac8e722d2152dc35be069ccaa700df5da25318/IMG/mainMenuIMAGE.jpg)
 
 GAMEPLAY
+
 ![Image Alt](https://github.com/FDP-01-2025/project-sfat/blob/6d8c5f0047bae987ff897cfe59d47519c7eee866/IMG/level2IMAGE.jpg)
+
 
 ## Equipo
 
