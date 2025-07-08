@@ -32,6 +32,11 @@ En todo el Proyecto hemos usado cada una de los temas, funciones y variables vis
 
 Usamos un **struct** para definir el funcionamiento de las secuencias de numeros en el **NIVEL 4** y para el registro de usuario e inicio de sesión hicimos uso del manejo de datos creando una base de datos con el **UserName** del jugador y la contraseña del jugador, asi que siempre que el jugador quiera rejugar el videojuego solo debe iniciar sesión con su usuario y volver a empezar.
 
+#### Manejo de errores
+
+El juego maneja errores validando entradas, limpiando el búfer, controlando límites del mapa y evitando opciones inválidas. Además, permite reintentos y da mensajes claros para guiar al jugador.
+
+
 
 
 
