@@ -5,9 +5,13 @@
 El jugador se sumergira en una experiencia de aventura, misterio y estrategia dentro de un antiguo templo mistico abandonado en lo mas profundo de la selva amazonica, el jugador debera superar 5 pruebas en el interior del templo. Si este no las supera... Jamas podra salir del templo.
 
 #### Nivel 1: Cruza el puente
-El jugador se encuentra en un callejon sin salida, se encuentra al borde de un antiguo puente de madera el cual esta suspendido sobre un abismo sin fin, las tablas de madera estan marcadas por simbolos antiguos y solo la combinacion correcta evitara que el puente ceda y caigas por el oscuro abismo... El jugador debe adivinar la combinacion correcta para llegar al otro lado del puente y seguir con su camino.
+El jugador se encuentra en un callejon sin salida, se encuentra al borde de un antiguo puente de madera el cual esta suspendido sobre un abismo sin fin, las tablas de madera estan marcadas por simbolos antiguos, debes tener cuidado donde pisas, la combinacion correcta evitara que el puente ceda y caigas por el oscuro abismo... El jugador debe adivinar la combinacion correcta para llegar al otro lado del puente y seguir con su camino.
 
-#### Nivel 2:
+#### Nivel 2: Escapa del laberinto
+Despues de cruzar el puente el jugador llegara a lo que parece ser un antiguo laberinto dentro del mismo templo, aunque dicho laberinto es mas estrecho que un laberinto convencional y esta hecho de piedra, no resultara muy dificil salir de este tetrico laberinto oscuro y claustrofobico.
+
+#### Nivel 3: Sala de la Sabiduria
+Despues de salir del laberinto llegaras a una sala grande y oscura, veras un altar en el centro con muchos acertijos grabados en la piedra, debes poner a prueba tu paciencia y tu sabiduria para salir de este cuarto, solo resolviendo los enigmas del altar podras avanzar y seguir con tu camino.
 
 
 
