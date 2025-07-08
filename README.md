@@ -31,3 +31,5 @@ El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuen
 1. Clona este repositorio en tu máquina local:
    ```bash
    https://github.com/FDP-01-2025/project-sfat.git
+
+2. Haz click en el boton verde que dice **<> Code**
