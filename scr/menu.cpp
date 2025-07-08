@@ -13,18 +13,18 @@ void userMenu() {
     do {
 
         cout << endl;
-        cout << "==============================" << endl;
-        cout << "        MENU DE USUARIO       " << endl;
-        cout << "==============================" << endl;
-        cout << "1. Registrarse" << endl;
-        cout << "2. Iniciar Sesion" << endl;
-        cout << "3. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "============================" << endl;
+        cout << "           USER MENU        " << endl;
+        cout << "============================" << endl;
+        cout << "1. Register" << endl;
+        cout << "2. Login" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Choose an option: ";
 
         while (!(cin >> option)) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Entrada invalida. Por favor, ingrese un numero: ";
+            cout << "Invalid entry. Please enter a number: ";
         }
 
         switch (option) {
@@ -36,10 +36,10 @@ void userMenu() {
                 if (logged_In) mainMenu();
                 break;
             case 3:
-                cout << "Saliendo..." << endl;
+                cout << "Leaving..." << endl;
                 break;
             default:
-                cout << "Opcion invalida" << endl;
+                cout << "Invalid option" << endl;
         }
 
     } while (option != 3);
@@ -54,32 +54,32 @@ void mainMenu() {
         gameTitle();
 
         cout << "\n==========================================" << endl;
-        cout << "              MENU PRINCIPAL  " << endl;
+        cout << "              MAIN MENU  " << endl;
         cout << "==========================================" << endl;
-        cout << "  1.  Iniciar Partida" << endl;
-        cout << "  2.  Volver al Menu de Usuario" << endl;
+        cout << "  1.  Start Game" << endl;
+        cout << "  2.  Return to the User Menu" << endl;
         cout << "------------------------------------------" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "Select an option: ";
 
         while (!(cin >> option)) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Entrada invalida. Por favor, ingrese un numero: ";
+            cout << "Invalid entry. Please enter a number: ";
         }
 
         switch (option)
         {
         case 1:
-            cout << "\n Cargando el juego...\n" << endl;
+            cout << "\n Loading game...\n" << endl;
             gameplay();
             break;
 
         case 2:
-            cout << "\n Regresando al Menu de Usuario...\n" << endl;
+            cout << "\n Returning to the User Menu...\n" << endl;
             break;
         
         default:
-            cout << "\n Opción invalida. Intente de nuevo.\n" << endl;
+            cout << "\n Invalid option. Please try again.\n" << endl;
             break;
         }
     } while (option != 2);
