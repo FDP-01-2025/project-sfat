@@ -23,6 +23,9 @@ La pared se destruye y eres libre, o no...
 El Guardian del templo es la ultima prueba del templo, solo los elegidos seran capaces de derrotarlo y de reclamar las reliquias del templo, aquel que sea indigno, MORIRA...
 
 
+## Apliacion de los temas vistos durante el ciclo
+
+
 
 
 
