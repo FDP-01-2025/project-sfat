@@ -23,8 +23,8 @@ void gameTitle(){
 void nextLevel_Message() {
     system("cls");
     cout << "\n==============================================\n";
-    cout << "          ¡Nivel completado!\n";
-    cout << "     Presiona ENTER para el siguiente nivel...";
+    cout << "          Level complete!\n";
+    cout << "     Press ENTER for the next level...";
     cout << "\n==============================================\n";
     cin.get();
     system("cls");
@@ -42,12 +42,12 @@ void level_01(){
     }
 
     cout << "===============================================" << endl;
-    cout << "         Nivel 1: Cruza el puente." << endl;
+    cout << "         Level 1: Cross the bridge." << endl;
     cout << "===============================================" << endl;
-    cout << "Te detienes al borde de un antiguo puente colgante suspendido sobre un abismo sin fondo.\n";
-    cout << "Las tablas de madera estan marcadas con simbolos antiguos... solo una combinacion de pasos es segura.\n";
-    cout << "Si eliges mal, el puente cedera y caerás al vacio.\n";
-    cout << "Debes adivinar la combinacion correcta para cruzar hasta el otro lado.\n";
+    cout << "You stop at the edge of an ancient suspension bridge suspended over a bottomless abyss.\n";
+    cout << "The wooden boards are marked with ancient symbols... only one combination of steps is safe.\n";
+    cout << "If you choose wrong, the bridge will give way and you will fall into the void.\n";
+    cout << "You must guess the correct combination to cross to the other side.\n";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     do {
@@ -57,27 +57,27 @@ void level_01(){
         while (currentPlatform <= 5 && isSuccess) {
             cout << endl;
             cout << "-----------------------------------------------" << endl;
-            cout << "Plataforma " << currentPlatform << " de 5." << endl;
-            cout << "Opciones disponibles: 1, 2, 3, 4, 5." << endl;
-            cout << "Elige una opcion: ";
+            cout << "Platform " << currentPlatform << " of 5." << endl;
+            cout << "Available options: 1, 2, 3, 4, 5." << endl;
+            cout << "Choose an option: ";
 
             while (!(cin >> userChoice)) {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Entrada invalida. Por favor, ingresa un numero entre 1 y 5: ";
+                cout << "Invalid entry. Please enter a number between 1 and 5.: ";
             }
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             if (userChoice == correctPath[currentPlatform - 1]) {
                 cout << endl;
                 cout << "**********************************************" << endl;
-                cout << "Correcto. Avanzas a la siguiente plataforma." << endl;
+                cout << "Correct. You advance to the next platform." << endl;
                 cout << "**********************************************" << endl;
                 currentPlatform++;
             } else {
                 cout << endl;
                 cout << "**********************************************" << endl;
-                cout << "Incorrecto. Has caido al vacio." << endl;
+                cout << "Wrong. You've fallen into the void." << endl;
                 cout << "**********************************************" << endl;
                 isSuccess = false;
             }
@@ -86,7 +86,7 @@ void level_01(){
         if (currentPlatform > 5 && isSuccess) {
             cout << endl;
             cout << "**********************************************" << endl;
-            cout << "Felicidades; has cruzado el puente sano y salvo." << endl;
+            cout << "Congratulations; you've crossed the bridge safely." << endl;
             cout << "**********************************************" << endl;
             nextLevel_Message();
         }
@@ -125,26 +125,26 @@ void level_02() {
             case 'a': nextY--; break;
             case 'd': nextY++; break;
             default:
-                cout << "Movimiento invalido. Usa W, A, S o D." << endl;
+                cout << "Invalid movement. Use W, A, S or D." << endl;
                 return false;
         }
 
         if (nextX < 0 || nextX >= maze.size() || nextY < 0 || nextY >= maze[0].size()) {
-            cout << "No puedes salir del laberinto. Elige otra direccion." << endl;
+            cout << "You can't get out of the maze. Choose another direction." << endl;
             return false;
         }
 
         char destination = maze[nextX][nextY];
 
         if (destination == '#') {
-            cout << "Una pared bloquea el camino. Intenta otra direccion." << endl;
+            cout << "A wall blocks the way. Try another direction.." << endl;
             return false;
         }
 
         if (destination == 'S') {
             cout << endl;
             cout << "**********************************************" << endl;
-            cout << "Felicidades; has escapado del laberinto con vida." << endl;
+            cout << "Congratulations; you've escaped the maze alive." << endl;
             cout << "**********************************************" << endl;
             return true;
         }
@@ -164,12 +164,12 @@ void level_02() {
 
         system("cls");
         cout << "==============================================" << endl;
-        cout << "           Nivel 2: Escape del laberinto." << endl;
+        cout << "           Level 2: Escape the Maze" << endl;
         cout << "==============================================" << endl;
-        cout << "Controla al explorador usando las teclas." << endl;
-        cout << "W: arriba; A: izquierda; S: abajo; D: derecha." << endl;
-        cout << "Tu objetivo es llegar a la salida marcada con S." << endl;
-        cout << "Tienes 20 segundos para escapar del laberinto." << endl;
+        cout << "Control the explorer using the keys." << endl;
+        cout << "W: up; A: left; S: down; D: right." << endl;
+        cout << "Your goal is to reach the exit marked S." << endl;
+        cout << "You have 20 seconds to escape the maze." << endl;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         escaped = false;
@@ -179,16 +179,16 @@ void level_02() {
             if (seconds >= 20) {
                 cout << endl;
                 cout << "----------------------------------------------" << endl;
-                cout << "Tiempo agotado. Debes intentarlo de nuevo." << endl;
+                cout << "Time up. You must try again." << endl;
                 cout << "----------------------------------------------" << endl;
                 break;
             }
             cout << endl;
-            cout << "----------------- Mapa del laberinto -----------------" << endl;
+            cout << "----------------- Map of the maze -----------------" << endl;
             showMaze(maze);
             cout << "------------------------------------------------------" << endl;
-            cout << "Tiempo transcurrido: " << seconds << " de 20 segundos." << endl;
-            cout << "Ingresa tu movimiento (W, A, S o D): ";
+            cout << "Time elapsed: " << seconds << " of 20 seconds." << endl;
+            cout << "Enter your movement (W, A, S o D): ";
             char key;
             cin >> key;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -197,7 +197,7 @@ void level_02() {
         }
         if (!escaped) {
             cout << endl;
-            cout << "Reiniciando el laberinto. Intenta nuevamente." << endl;
+            cout << "Resetting the maze. Please try again." << endl;
             cout << "----------------------------------------------" << endl;
         }
     } while (!escaped);
@@ -212,100 +212,100 @@ void level_03() {
 
     system("cls");
     cout << "==============================================" << endl;
-    cout << "        Nivel 3: Sala de la Sabiduria." << endl;
+    cout << "        Level 3: Hall of Wisdom." << endl;
     cout << "==============================================" << endl;
-    cout << "Despues de escapar del oscuro laberinto, llegas a una sala secreta del templo.\n";
-    cout << "En el centro hay un altar con antiguos acertijos grabados en piedra...\n";
-    cout << "Solo resolviendo sus enigmas podras continuar tu viaje.\n";
+    cout << "After escaping the dark labyrinth, you reach a secret room in the temple.\n";
+    cout << "In the center is an altar with ancient riddles carved in stone...\n";
+    cout << "Only by solving its riddles will you be able to continue your journey.\n";
     cin.ignore();
 
     auto riddleWithHint = [&](string titulo, string enunciado, vector<string> respuestas, string pista) -> bool {
         cout << "\n" << titulo << endl;
         cout << enunciado << "\n";
-        cout << "Tu respuesta: ";
+        cout << "Your answer: ";
         string answer; getline(cin, answer);
         answer = toLower(answer);
         for (const auto& r : respuestas) {
             if (answer.find(r) != string::npos) {
-                cout << "Correcto. El mecanismo antiguo se activa.\n";
+                cout << "Correct. The old mechanism is activated.\n";
                 return true;
             }
         }
-        cout << "Incorrecto. Pista: " << pista << "\n";
+        cout << "Incorrect. Clue: " << pista << "\n";
         return false;
     };
 
     while (!riddleWithHint(
-        "Acertijo 1: La Entrada del Templo",
-        "Guardada por los ancestros, esta entrada jamas se cierra, ni de dia ni de noche.\nQue es aquello que siempre esta abierto, pero jamas se cierra?",
-        {"puerta"},
-        "Puedes entrar y salir por ella."
+        "Puzzle 1: The Entrance of the Temple",
+        "Guarded by the ancestors, this entrance never closes, day or night.\nWhat is that which is always open, but never closes?",
+        {"door"},
+        "You can enter and exit through it."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 2: La Antorcha Mistica",
-        "Habita en cada rincon del templo, da vida a las sombras sin tener cuerpo ni forma.\nQue ilumina todo, pero nadie puede tocar?",
-        {"luz"},
-        "Sin ella, todo estaria oscuro."
+        "Puzzle 2: The Mystic Torch",
+        "It lives in every corner of the temple, giving life to the shadows without having body or form.\nThat lights up everything, but no one can touch?",
+        {"light"},
+        "Without her, everything would be dark."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 3: El Guardian de Piedra",
-        "Permanece inmovil desde hace siglos, contempla a cada viajero sin decir palabra.\nQue es grande, no habla y siempre vigila en los templos?",
-        {"estatua"},
-        "Esta hecho de piedra o metal."
+        "Puzzle 3: The Stone Guardian",
+        "It has remained motionless for centuries, contemplating each traveler without saying a word.\nThat he is big, doesn't speak and always watches in the temples?",
+        {"statue"},
+        "It is made of stone or metal."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 4: El Rio de la Eternidad",
-        "Fluye sin descanso, no conoce el final, y su voz es un murmullo constante.\nQue nunca se detiene pero tampoco camina?",
-        {"agua", "rio"},
-        "Es vital para la vida y esta en rios y lagos."
+        "Puzzle 4: The River of Eternity",
+        "It flows without rest, it knows no end, and its voice is a constant murmur.\nThat never stops but never walks either?",
+        {"water", "river"},
+        "It is vital for life and is found in rivers and lakes."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 5: La Llave de lo Invisible",
-        "Sin ella, los sellos no se rompen. No se puede ver ni sostener, pero abre puertas cerradas.\nQue es?",
-        {"palabra", "contrasena"},
-        "Es algo que dices o escribes para entrar."
+        "Puzzle 5: The Key to the Invisible",
+        "Without it, seals can't be broken. You can't see it or hold it, but it opens closed doors.\nWhat is it?",
+        {"word", "password"},
+        "It's something you say or write to get in."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 6: Las Huellas del Eco",
-        "A cada paso la dejas atras, pero sin ella jamas podrias avanzar.\nQue crece cuanto mas caminas?",
-        {"paso", "huella"},
-        "Son senales que dejas caminando."
+        "Puzzle 6: The Traces of the Echo",
+        "You leave it behind at every step, but without it you could never move forward.\nWhat grows the more you walk?",
+        {"step", "footprint"},
+        "They are signs that you leave while walking."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 7: La Llama de los Cielos",
-        "Arde sin quemar, resplandece en el firmamento, guia a los sabios y asombra a los viajeros.\nQue esta encendido sin fuego?",
-        {"estrella", "sol"},
-        "Brilla en el cielo durante el dia o la noche."
+        "Puzzle 7: The Flame of the Heavens",
+        "It burns without burning, it shines in the firmament, it guides the wise and amazes travelers.\nWhat is lit without fire?",
+        {"star", "sun"},
+        "It shines in the sky during the day or night."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 8: La Rueda Infinita",
-        "Gira sin cesar, arrastra el destino de todo ser, y jamas se detiene.\nQue se mueve sin que puedas empujarlo?",
-        {"tierra", "planeta"},
-        "Es donde vivimos todos."
+        "Puzzle 8: The Infinite Wheel",
+        "It spins endlessly, dragging the destiny of every being, and never stops.\nWhat moves without you being able to push it?",
+        {"earth", "planet"},
+        "It's where we all live."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 9: La Voz de las Montanas",
-        "Responde cuando nadie pregunta, grita lo que tu acabas de decir, pero no tiene boca ni oidos.\nQue es?",
-        {"eco"},
-        "Se escucha en cavernas y montanas."
+        "Puzzle 9: The Voice of the Mountains",
+        "It answers when no one asks, he shouts what you just said, but he has no mouth or ears.\nWhat is it?",
+        {"echo"},
+        "It is heard in caves and mountains."
     )) {}
 
     while (!riddleWithHint(
-        "Acertijo 10: El Guardian de los Siglos",
-        "Avanza sin mirar atras, consume todo a su paso y nunca se detiene.\nQue reina sobre cada instante, pero nadie puede ver?",
-        {"tiempo", "reloj"},
-        "Lo medimos con relojes y calendarios."
+        "Puzzle 10: The Guardian of the Centuries",
+        "It moves forward without looking back, consumes everything in its path and never stops.\nWho reigns over every moment, but no one can see?",
+        {"time", "clock"},
+        "We measure it with watches and calendars."
     )) {}
 
-    cout << "\nFelicidades. Has resuelto todos los acertijos y el templo revela una nueva salida secreta.\n";
+    cout << "\nCongratulations.\nYou have solved all the puzzles and the temple reveals a new secret exit.";
     nextLevel_Message();
 }
 
@@ -319,11 +319,11 @@ void level_04() {
 
     system("cls");
     cout << "==============================================" << endl;
-    cout << "      Nivel 4: Muro de las Secuencias." << endl;
+    cout << "      Level 4: Wall of Sequences." << endl;
     cout << "==============================================" << endl;
-    cout << "Delante de ti hay un muro antiguo con secuencias numericas talladas en piedra.\n";
-    cout << "Debes observar cada secuencia y escribir el numero que sigue correctamente.\n";
-    cout << "Resuelve al menos dos secuencias para que la puerta secreta se abra.\n";
+    cout << "In front of you is an ancient wall with number sequences carved in stone.\n";
+    cout << "You must observe each sequence and write the number that follows correctly.\n";
+    cout << "Solve at least two sequences for the secret door to open.\n";
     cin.ignore();
 
     vector<Sequence> easy = {
@@ -357,37 +357,37 @@ void level_04() {
         vector<Sequence> selected = {seq1, seq2, seq3};
 
         for (int i = 0; i < 3; ++i) {
-            cout << "\nSecuencia " << i + 1 << ": " << selected[i].text << "\n";
-            cout << "Tu respuesta: ";
+            cout << "\nSequence " << i + 1 << ": " << selected[i].text << "\n";
+            cout << "Your answer: ";
 
             while (!(cin >> playerAnswer)) {
-                cout << "Entrada invalida. Por favor ingresa un numero entero: ";
+                cout << "Invalid entry. Please enter an integer: ";
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
 
             if (playerAnswer == selected[i].correctAnswer) {
-                cout << "Correcto. La pared brilla levemente...\n";
+                cout << "Correct. The wall shines slightly...\n";
                 correctCount++;
             } else {
-                cout << "Incorrecto. La piedra tiembla levemente.\n";
+                cout << "Incorrect. The stone trembles slightly.\n";
             }
         }
 
         if (correctCount >= 2) {
-            cout << "\nHas resuelto el misterio del Muro de las Secuencias.\n";
-            cout << "Una compuerta oculta se abre lentamente...\n";
+            cout << "\nYou have solved the mystery of the Wall of Sequences.\n";
+            cout << "A hidden hatch slowly opens...\n";
 
-            cout << "\nDe pronto, la estatua que te observaba todo este tiempo empieza a moverse...\n";
-            cout << "Su piedra se agrieta y revela un ser ancestral: el Guardian del Templo.\n";
-            cout << "No basta con resolver acertijos. Ahora debes enfrentarlo...\n";
+            cout << "\nSuddenly, the statue that has been watching you all this time starts to move...\n";
+            cout << "\nIts stone cracks and reveals an ancient being: the Temple Guardian.";
+            cout << "Its stone cracks and reveals an ancient being: the Temple Guardian.\n";
 
             nextLevel_Message();
 
             completed = true;
         } else {
-            cout << "\nLas piedras permanecen inmoviles. No lograste descifrar el patron sagrado.\n";
-            cout << "Intentalo de nuevo.\n";
+            cout << "\nThe stones remain motionless. You failed to decipher the sacred pattern.\n";
+            cout << "Try again.\n";
             nextLevel_Message();
         }
     }
@@ -398,10 +398,10 @@ void level_05() {
 
     system("cls");
     cout << "==============================================" << endl;
-    cout << "   Nivel Final: El Guardian del Templo" << endl;
+    cout << "   Final Level: The Guardian of the Temple" << endl;
     cout << "==============================================" << endl;
-    cout << "Has llegado a la camara final. Una estatua gigante despierta y te desafia.\n";
-    cout << "Debes sobrevivir al combate para obtener la salida.\n";
+    cout << "You've reached the final chamber. A giant statue awakens and challenges you.\n";
+    cout << "You must survive the combat to get to the exit.\n";
     cin.ignore();
 
     bool won = false;
@@ -411,16 +411,16 @@ void level_05() {
         int guardianHP = 80;
 
         while (playerHP > 0 && guardianHP > 0) {
-            cout << "\nTu vida: " << playerHP << " | Vida del Guardian: " << guardianHP << endl;
-            cout << "Elige tu accion:\n";
-            cout << "1. Atacar\n2. Defender\n3. Curarte\n";
-            cout << "Opcion: ";
+            cout << "\nYour health: " << playerHP << " | Guardian's health: " << guardianHP << endl;
+            cout << "Choose your action:\n";
+            cout << "1. Attack\n2. Defend\n3. Heal\n";
+            cout << "Option: ";
 
             int choice;
             while (!(cin >> choice) || choice < 1 || choice > 3) {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Entrada invalida. Elige 1, 2 o 3: ";
+                cout << "Invalid entry. Elige 1, 2 or 3: ";
             }
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -431,56 +431,56 @@ void level_05() {
                 case 1:
                     playerDamage = rand() % 20 + 10; // Daño entre 10 y 29
                     guardianHP -= playerDamage;
-                    cout << "Atacaste al guardian e hiciste " << playerDamage << " de daño.\n";
+                    cout << "You attacked the guardian and dealt " << playerDamage << " damage.\n";
                     break;
                 case 2:
                     guardianDamage /= 2;
-                    cout << "Te defendiste. El daño del guardian sera reducido.\n";
+                    cout << "You defended yourself. The guardian's damage will be reduced.\n";
                     break;
                 case 3: {
                     int heal = rand() % 15 + 5; // Curación entre 5 y 19
                     playerHP = min(100, playerHP + heal);
-                    cout << "Te curaste " << heal << " puntos de vida.\n";
+                    cout << "You are healed " << heal << " health points.\n";
                     break;
                 }
             }
 
             if (guardianHP > 0) {
                 playerHP -= guardianDamage;
-                cout << "El guardian te ataca e inflige " << guardianDamage << " de daño.\n";
+                cout << "The guardian attacks you, dealing " << guardianDamage << " damage.\n";
             }
         }
 
         if (playerHP > 0) {
-            cout << "\nHas derrotado al Guardian del Templo.\n";
-            cout << "El templo retumba y una salida de luz aparece ante ti.\n";
+            cout << "\nYou have defeated the Temple Guardian.\n";
+            cout << "The temple rumbles and a shaft of light appears before you.\n";
 
             if (playerHP >= 70) {
-                cout << "\nFinal Heroico:\n";
-                cout << "Saliste del templo con honor y gloria. Las antiguas deidades te bendicen.\n";
-                cout << "Tu nombre sera recordado por generaciones.\n";
+                cout << "\nHeroic Ending:\n";
+                cout << "You left the temple with honor and glory. The ancient deities bless you.\n";
+                cout << "Your name will be remembered for generations..\n";
             } else if (playerHP >= 30) {
-                cout << "\nFinal Justo:\n";
-                cout << "Lograste escapar del templo con la reliquia sagrada, aunque pagaste un alto precio.\n";
-                cout << "Las cicatrices de la batalla quedaran contigo.\n";
+                cout << "\nFair Ending:\n";
+                cout << "You managed to escape from the temple with the sacred relic, although you paid a high price.\n";
+                cout << "The scars of battle will remain with you.\n";
             } else {
-                cout << "\nFinal Oscuro:\n";
-                cout << "Escapaste... pero algo dentro de ti cambio para siempre.\n";
-                cout << "El poder del templo y su oscuridad ahora arden en tu interior.\n";
+                cout << "\nDark Ending:\n";
+                cout << "You escaped... but something inside you changed forever.\n";
+                cout << "The power of the temple and its darkness now burn within you.\n";
             }
 
             won = true;
         } else {
-            cout << "\nHas sido vencido por el guardian. Intentalo nuevamente...\n";
-            cout << "Presiona ENTER para volver a intentar.";
+            cout << "\nYou've been defeated by the guardian. Try again...\n";
+            cout << "Press ENTER to try again.";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin.get();
             system("cls");
         }
     }
 
-    cout << "\nFin del juego.\n";
-    cout << "Presiona ENTER para salir.";
+    cout << "\nGame Over.\n";
+    cout << "Press ENTER to exit.";
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cin.get();
 }
