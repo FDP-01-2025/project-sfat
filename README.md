@@ -2,7 +2,11 @@
 
 #### Descripción del Proyecto
 
-El jugador se sumergira en una experiencia de aventura, misterio y estrategia dentro de un antiguo templo mistico abandonado en lo mas profundo de la selva amazonica
+El jugador se sumergira en una experiencia de aventura, misterio y estrategia dentro de un antiguo templo mistico abandonado en lo mas profundo de la selva amazonica, el jugador debera superar 5 pruebas en el interior del templo. Si este no las supera... Jamas podra salir del templo.
+
+Nivel 1: El jugador se encuentra en un callejon sin salida, se encuentra al borde de un antiguo puente de madera el cual esta suspendido sobre un abismo sin fin, las tablas de madera estan marcadas por simbolos antiguos y solo la combinacion correcta evitara que el puente ceda y caigas por el oscuro abismo... El jugador debe adivinar la combinacion correcta para llegar al otro lado del puente y seguir con su camino.
+
+
 
 
 ## Equipo
