@@ -12,10 +12,6 @@ Desafío 1: El puente.
 
 El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuencia correcta.
 
-Desafío 3: Gira la palanca.
-
-El jugador debe presionar una tecla específica repetidamente hasta llegar la cantidad de pulsaciones requerida antes de que termine el tiempo o la palanca se estancará y será imposible continuar.
-
 ## Equipo
 
 - **Nombre del equipo:** [Super Smash Bugs]
