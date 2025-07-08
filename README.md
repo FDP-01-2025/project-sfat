@@ -43,6 +43,13 @@ El Guardian del templo es la ultima prueba del templo, solo los elegidos seran c
 
 2. **Nombre completo:** [José Francisco Rodríguez Hernández]  
    **Carnet:** [00047824]
+
+3. **Nombre completo:** [Gerson Alejandro Vindel Martínez]  
+   **Carnet:** [00247025]
+
+4. **Nombre completo:** [Mateo Rogel Guzmán]  
+   **Carnet:** [00047824]
+   
    
 
 ## Instrucciones de Ejecución
