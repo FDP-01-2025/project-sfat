@@ -88,3 +88,5 @@ GAMEPLAY
    ```bash
    .\EscapeFT_Temple.exe
 
+4. Disfruta :)
+
