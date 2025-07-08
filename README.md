@@ -24,9 +24,6 @@ El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuen
 2. **Nombre completo:** [José Francisco Rodríguez Hernández]  
    **Carnet:** [00047824]
 
-3. **Nombre completo:** [Nombre del estudiante 3]  
-   **Carnet:** [Carnet del estudiante 3]
-
 (Agregar más integrantes si es necesario)
 
 ## Instrucciones de Ejecución
