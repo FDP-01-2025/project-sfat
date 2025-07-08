@@ -82,9 +82,9 @@ GAMEPLAY
    ```bash
    git clone https://github.com/FDP-01-2025/project-sfat.git
 
-2. Open Visual Studio and open the folder with the name "project-sfat-main"
+2. Abre Visual Studio Code y abre la carpeta llamada "project-sfat-main"
    
-3. Once you are inside the folder, open a new terminal and type this to compile and run the game:
+3. Cuando estes dentro de la carpeta, abre una nueva terminal y pega lo siguiente:
    ```bash
    .\EscapeFT_Temple.exe
 
