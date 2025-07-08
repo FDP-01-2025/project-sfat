@@ -24,7 +24,7 @@ El Guardian del templo es la ultima prueba del templo, solo los elegidos seran c
 
 
 
-## Aplicaion de los temas vistos durante el ciclo
+## Aplicación de los temas vistos durante el ciclo
 
 En todo el Proyecto hemos usado cada una de los temas, funciones y variables vistos en el CICLO 1 de la materia FUNDAMENTOS DE PROGRAMACIÓN, hemos hecho uso de condicionales **if, else if** para la elaboración de condiciones a cumplir a lo largo de todas los niveles, hemos usado estructuras de tipo **switch** para la navegacion entre los diferentes menús y apartados del juego, hemos usado estructuras de bucles de tipo **for** para repetir un bloque de código una cierta cantidad de veces, por ejemplo en las plataformas del **NIVEL 1** y en los acertijos del **NIVEL 3**, tambien usamos estructuras de de tipo **while y do while** para los momentos en los que el programa detectaba si el usuario habia superado el nivel o no y si el usuario fracasaba se repitiera el nivel hasta que este lo completara, tambien usamos **vectores** para la elaboración del laberinto del **NIVEL 2** y por ultimo las funciones de tipo **array** para que el usuario completara las secuencias de numeros en el **NIVEL 4**.
 
