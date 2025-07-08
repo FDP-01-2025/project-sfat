@@ -33,7 +33,7 @@ El Guardian del templo es la ultima prueba del templo, solo los elegidos seran c
 
 ## Mockup del juego
 Menú Principal
-!IMG/mainMenuIMAGE.jpg
+https://github.com/FDP-01-2025/project-sfat/blob/b1ac8e722d2152dc35be069ccaa700df5da25318/IMG/mainMenuIMAGE.jpg
 
 ## Equipo
 
