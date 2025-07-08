@@ -4,6 +4,8 @@
 
 El jugador se sumergira en una experiencia de aventura, misterio y estrategia dentro de un antiguo templo mistico abandonado en lo mas profundo de la selva amazonica, el jugador debera superar 5 pruebas en el interior del templo. Si este no las supera... Jamas podra salir del templo.
 
+# GAMEPLAY
+
 #### Nivel 1: Cruza el puente
 El jugador se encuentra en un callejon sin salida, se encuentra al borde de un antiguo puente de madera el cual esta suspendido sobre un abismo sin fin, las tablas de madera estan marcadas por simbolos antiguos, debes tener cuidado donde pisas, la combinacion correcta evitara que el puente ceda y caigas por el oscuro abismo... El jugador debe adivinar la combinacion correcta para llegar al otro lado del puente y seguir con su camino.
 
@@ -19,6 +21,9 @@ Despues de resolver los enigmas del altar, un mecanismo Te mostro un muro agriet
 #### Nvel Final: El Guardian del Templo
 La pared se destruye y eres libre, o no...
 El Guardian del templo es la ultima prueba del templo, solo los elegidos seran capaces de derrotarlo y de reclamar las reliquias del templo, aquel que sea indigno, MORIRA...
+
+
+
 
 
 
