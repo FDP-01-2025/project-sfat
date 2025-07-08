@@ -2,15 +2,8 @@
 
 #### Descripción del Proyecto
 
-El jugador se encuentra atrapado en un templo donde están instaladas decenas de trampas y mecanismos letales. Para escapar, deberá deberá superar cuatro peligrosos retos que pondrán a prueba la agilidad y rapidez física, antes de que acabe el tiempo.
+El jugador se sumergira en una experiencia de aventura, misterio y estrategia dentro de un antiguo templo mistico abandonado en lo mas profundo de la selva amazonica
 
-El jugador enfrentará pruebas consecutivamente, cada una de ellas tendrá una mecánica distinta. La jugabilidad mayormente se centra en la audacia, agilidad y precisión con el teclado. Los desafíos varían en cada una de las fases.
-
-El objetivo del jugador es completar los cuatro retos que se encuentran instalados en el templo y escapar.
-
-Desafío 1: El puente.
-
-El jugador deberá atravesar 5 plataformas eligiendo diversas opciones en secuencia correcta.
 
 ## Equipo
 
