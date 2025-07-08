@@ -42,7 +42,7 @@ void level_01(){
     }
 
     cout << "===============================================" << endl;
-    cout << "         Level 1: Cross the bridge." << endl;
+    cout << "         Level 1: Cross the bridge.            " << endl;
     cout << "===============================================" << endl;
     cout << "You stop at the edge of an ancient suspension bridge suspended over a bottomless abyss.\n";
     cout << "The wooden boards are marked with ancient symbols... only one combination of steps is safe.\n";
@@ -71,7 +71,7 @@ void level_01(){
             if (userChoice == correctPath[currentPlatform - 1]) {
                 cout << endl;
                 cout << "**********************************************" << endl;
-                cout << "Correct. You advance to the next platform." << endl;
+                cout << "Correct. You advance to the next platform."     << endl;
                 cout << "**********************************************" << endl;
                 currentPlatform++;
             } else {
@@ -164,7 +164,7 @@ void level_02() {
 
         system("cls");
         cout << "==============================================" << endl;
-        cout << "           Level 2: Escape the Maze" << endl;
+        cout << "           Level 2: Escape the Maze           " << endl;
         cout << "==============================================" << endl;
         cout << "Control the explorer using the keys." << endl;
         cout << "W: up; A: left; S: down; D: right." << endl;
@@ -179,7 +179,7 @@ void level_02() {
             if (seconds >= 20) {
                 cout << endl;
                 cout << "----------------------------------------------" << endl;
-                cout << "Time up. You must try again." << endl;
+                cout << "         Time up. You must try again.         " << endl;
                 cout << "----------------------------------------------" << endl;
                 break;
             }
@@ -212,7 +212,7 @@ void level_03() {
 
     system("cls");
     cout << "==============================================" << endl;
-    cout << "        Level 3: Hall of Wisdom." << endl;
+    cout << "            Level 3: Hall of Wisdom.          " << endl;
     cout << "==============================================" << endl;
     cout << "After escaping the dark maze, you reach a secret room in the temple.\n";
     cout << "In the center is an altar with ancient riddles carved in stone...\n";
@@ -319,7 +319,7 @@ void level_04() {
 
     system("cls");
     cout << "==============================================" << endl;
-    cout << "      Level 4: Wall of Sequences." << endl;
+    cout << "          Level 4: Wall of Sequences.         " << endl;
     cout << "==============================================" << endl;
     cout << "In front of you is an ancient wall with number sequences carved in stone.\n";
     cout << "You must observe each sequence and write the number that follows correctly.\n";
@@ -398,7 +398,7 @@ void level_05() {
 
     system("cls");
     cout << "==============================================" << endl;
-    cout << "   Final Level: The Guardian of the Temple" << endl;
+    cout << "   Final Level: The Guardian of the Temple    " << endl;
     cout << "==============================================" << endl;
     cout << "You've reached the final chamber. A giant statue awakens and challenges you.\n";
     cout << "You must survive the combat to get to the exit.\n";
